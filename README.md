@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -44,6 +43,3 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 =======
-# front-employee-management
-Front-end de sistema de gerenciamento de funcionários
->>>>>>> 38d94d6ac8fde33ff804b4cebe403628d2eff423
