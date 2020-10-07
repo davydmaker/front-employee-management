@@ -1,6 +1,6 @@
 # Front do Employee Management
 
-CRUD simples com de Funcionários e Cargos. Aplicação criada usando React com [TypeScript](https://www.npmjs.com/package/typescript).
+Front pra consumir CRUD simples de Funcionários e Cargos. Aplicação criada usando React com [TypeScript](https://www.npmjs.com/package/typescript).
 
 
 ## Como Executar
