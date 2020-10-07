@@ -10,7 +10,6 @@ const List = () => {
 
     const [employees, setEmployees] = useState<EmployeeInterface[]>([]);
 
-
     useEffect(() => {
         async function returnEmployees() {
             await api.get('/employees')

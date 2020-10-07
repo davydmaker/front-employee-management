@@ -7,9 +7,9 @@ import CreateEmployee from './pages/Employee/Create';
 import ListEmployee from './pages/Employee/List';
 import EditEmployee from './pages/Employee/Edit';
 
-// import CreateRole from './pages/Role/Create';
-// import ListRole from './pages/Role/List';
-// import EditRole from './pages/Role/Edit';
+import CreateRole from './pages/Role/Create';
+import ListRole from './pages/Role/List';
+import EditRole from './pages/Role/Edit';
 
 const Routes = () => {
     return (
@@ -18,33 +18,25 @@ const Routes = () => {
 
             <Container>
                 <Switch>
-
-                    {/* Employee Routes */}
                     <Route exact path="/employees">
                         <ListEmployee />
                     </Route>
-
                     <Route path="/employees/create">
                         <CreateEmployee />
                     </Route>
-
                     <Route path="/employees/:id">
                         <EditEmployee />
                     </Route>
 
-                    {/* Role Routes */}
                     <Route exact path="/roles">
-                        {/* <ListRole/> */}
+                        <ListRole />
                     </Route>
-
                     <Route path="/roles/create">
-                        {/* <CreateRole /> */}
+                        <CreateRole />
                     </Route>
-
-                    <Route path="/roles/edit/:id">
-                        {/* <EditRole/> */}
+                    <Route path="/roles/:id">
+                        <EditRole />
                     </Route>
-
                 </Switch>
             </Container>
         </BrowserRouter>

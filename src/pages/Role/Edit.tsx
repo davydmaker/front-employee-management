@@ -1,15 +1,29 @@
-import React, { useState, FormEvent, ChangeEvent } from 'react';
+import React, { useState, FormEvent, ChangeEvent, useEffect } from 'react';
 import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 import api from '../../services/api';
 
-const Create = () => {
+const Edit = () => {
     const history = useHistory();
+    const { id } = useParams<any>();
 
     const [formData, setFormData] = useState({
         description: '',
     });
+
+    useEffect(() => {
+        async function returnRole() {
+            await api.get(`/roles/${id}`)
+                .then(resp => {
+                    setFormData({
+                        description: resp.data.description
+                    });
+                });
+        }
+
+        returnRole();
+    }, [id])
 
     async function handleSubmit(evt: FormEvent) {
         evt.preventDefault();
@@ -20,7 +34,7 @@ const Create = () => {
             description
         };
 
-        await api.post('/roles', data);
+        await api.put(`/roles/${id}`, data);
 
         history.push('/roles');
     }
@@ -41,14 +55,14 @@ const Create = () => {
                     <Col>
                         <FormGroup>
                             <Label for="description">Descrição</Label>
-                            <Input onChange={handleInputChange} type="text" name="description" id="description" placeholder="Insira o nome do cargo" maxLength={50} required />
+                            <Input onChange={handleInputChange} type="text" defaultValue={formData.description} name="description" id="description" placeholder="Insira o nome do cargo" maxLength={50} required />
                         </FormGroup>
                     </Col>
                 </Row>
-                <Button color={"success"}>Cadastrar</Button>
+                <Button color={"success"}>Salvar</Button>
             </Form>
         </Col>
     )
 };
 
-export default Create;
+export default Edit;

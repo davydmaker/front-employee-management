@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default interface EmployeeProps{
     id: number;
     first_name: string;
@@ -11,4 +9,3 @@ export default interface EmployeeProps{
         description: string;
     }
 }
-

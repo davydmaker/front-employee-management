@@ -118,7 +118,7 @@ const Edit = () => {
                         </FormGroup>
                     </Col>
                 </Row>
-                <Button color={"success"}>Cadastrar</Button>
+                <Button color={"success"}>Salvar</Button>
             </Form>
         </Col>
     )
